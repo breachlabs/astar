@@ -1,6 +1,6 @@
 # A* search algorithm for Python
 
-A generic implementation of the A* search algoritm in Python
+A generic implementation of the A* search algorithm in Python
 
 ## Usage example: Maze
 
@@ -37,7 +37,7 @@ mySearch.g = lambda o, p : 1 if o == 'go up' else 0 # 0 cost for all operators e
 mySearch.h = lambda p : abs(p[0] - 8 + p[1] - 1) # Heuristic: Manhattan distance to the destination point
 ```
 
-### Set the status restricitons
+### Set the status restrictions
 In this example we want to avoid the walls, so we use the following function:
 ```
 def safe(pt):
@@ -67,13 +67,13 @@ wsc.safe = safe
 ```
 
 ### Set the end checking function
-We have to check wether the final state has been reached or not. This function must have a parameter (the current state) and must return _True_ if the current state is the final state and _False_ otherwise
+We have to check whether the final state has been reached or not. This function must have a parameter (the current state) and must return _True_ if the current state is the final state and _False_ otherwise
 ```
 wsc.end = lambda p : p == [8, 1]
 ```
 
-### Set the comparation function (Optional)
-Some structures cannot be compared using '==', so we have to provide a function allowing us to compare such strucutres. By default the function is
+### Set the equality function (Optional)
+Some structures cannot be compared using '==', so we have to provide a function allowing us to compare such structures. By default the function is
 ```
 mySearch.comparator = lambda a, b : a == b
 ```
@@ -86,8 +86,11 @@ result = mySearch.search()
 If the search has been successful, it will return a instance of the Node class with the following fields:
 
 > **value:** The final state value
+
 > **g:** The total cost
+
 > **h:** The heuristic of the final state, always 0
+
 > **path:** A list containing the description for all the operators called to reach the state
 
 If the search has failed, it will return _None_

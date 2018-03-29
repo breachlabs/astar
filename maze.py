@@ -1,4 +1,3 @@
-
 from astar import Astar
 
 # Operator definitions
@@ -54,4 +53,3 @@ if result == None:
     print 'Could not find the shortest path'
 else:
     print 'The shortest path is: ' + str(result.path)
-print str(result)
